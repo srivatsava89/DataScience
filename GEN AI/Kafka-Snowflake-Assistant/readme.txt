@@ -1,5 +1,30 @@
+### GEN AI SQL - ASSISTANT 
+------------------------
+
+A Gen AI SQL Assistant is an AI-powered tool designed to assist users in interacting with databases through SQL (Structured Query Language) without requiring advanced SQL knowledge. This type of assistant uses natural language processing (NLP) and machine learning models to help users write, execute, and optimize SQL queries efficiently. Here are some key features and capabilities of a Gen AI SQL Assistant:
+
+Files:
+-------
+-GENAI-SQL-Assistant_Hackathon.pptx :  Explains the problem statement and Architecture of the project. 
+-app_secrets.py : Contains Api_keys and connection details
+-genai_sql_assitant.py : Main  file to run the application.
+-invalid_records.csv : Contains invalid records after data quality check.
+-kafka-connector_test.py : Its used for testing purpose, to test the code in multiple ways. 
+-prompts.txt : Contains the prompts for Generative Ai to produce the queries efficiently.
+-requirement.txt : Contains all the libraries required to run the application. 
+-sampledata.txt : contains Json data for tables which are created. 
+
+===========================================================================================================
+
 ## 1. Install required Librabries : 
+-----------------------------------
+
 pip install -r requirement.txt
+
+##1.1 Secrets
+-------------
+
+Add required secrets in app_secrets.py
 
 =========================================================================================================
 ## 2. Running the App:
