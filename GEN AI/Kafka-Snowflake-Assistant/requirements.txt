@@ -1,0 +1,9 @@
+streamlit
+snowflake-snowpark
+confluent_kafka
+snowflake-connector-python
+pandas
+json
+os
+time
+google-generativeai
