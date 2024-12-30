@@ -1,0 +1,28 @@
+================================================================================================================
+								SAMPLE DATA
+================================================================================================================
+{"stock_symbol":"AAPL","company_name":"Apple Inc.","date":"2024-01-01","opening_price":255.27,"closing_price":256.50,"high_price":257.00,"low_price":254.00,"volume":37277559,"market_cap":3858610266000,"dividend_yield":0.006}
+{"stock_symbol":"MSFT","company_name":"Microsoft Corporation","date":"2024-01-01","opening_price":340.00,"closing_price":345.00,"high_price":346.00,"low_price":339.00,"volume":8000000,"market_cap":2600000000000,"dividend_yield":0.008}
+{"stock_symbol":"GOOGL","company_name":"Alphabet Inc.","date":"2024-01-01","opening_price":1450.00,"closing_price":1465.00,"high_price":1470.00,"low_price":1445.00,"volume":3000000,"market_cap":950000000000,"dividend_yield":null}
+{"stock_symbol":"AMZN","company_name":"Amazon.com Inc.","date":"2024-01-01","opening_price":3300.00,"closing_price":3325.00,"high_price":3350.00,"low_price":3290.00,"volume":4000000,"market_cap":1700000000000,"dividend_yield":null}
+{"stock_symbol":"TSLA","company_name":"Tesla Inc.","date":"2024-01-01","opening_price":700.00,"closing_price":710.00,"high_price":715.00,"low_price":695.00,"volume":5000000,"market_cap":700000000000,"dividend_yield":null}
+{"stock_symbol":"FB","company_name":"Meta Platforms Inc.","date":"2024-01-01","opening_price":320.00,"closing_price":325.00,"high_price":328.00,"low_price":319.00,"volume":2000000,"market_cap":900000000000,"dividend_yield":null}
+{"stock_symbol":"NFLX","company_name":"Netflix Inc.","date":"2024-01-01","opening_price":500.00,"closing_price":505.00,"high_price":510.00,"low_price":495.00,"volume":1500000,"market_cap":220000000000,"dividend_yield":null}
+{"stock_symbol":"DJI","company_name":"^DJI (Dow Jones Industrial Average)","date":"2024-01-01","opening_price":"35000","closing_price":"35250","high_price":"35350","low_price":"34950","volume":"N/A","market_cap":"N/A","dividend_yield":"N/A"}
+{"stock_symbol":"GSPC","company_name":"^GSPC (S&P500)","date":"2024-01-01","opening_price":"4500","closing_price":"4525","high_price":"4535","low_price":"4485","volume":"N/A","market_cap":"N/A","dividend_yield":"N/A"}
+{"stock_symbol":"IXIC","company_name":"^IXIC (NASDAQ Composite)","date":"2024-01-01","opening_price":"15000","closing_price":"15125","high_price":"15175","low_price":"14975","volume":"N/A","market_cap":"N/A","dividend_yield":"N/A"}
+
+=====================================================================================================================================
+									COMPANY DETAILS
+=====================================================================================================================================
+{"company_name":"Apple Inc.","establish_year":1976,"overall_profit":100000000000,"type":"Product","headquarters":"Cupertino, California, USA"}
+{"company_name":"Microsoft Corporation","establish_year":1975,"overall_profit":85000000000,"type":"Software","headquarters":"Redmond, Washington, USA"}
+{"company_name":"Alphabet Inc.","establish_year":2015,"overall_profit":40000000000,"type":"Entertainment","headquarters":"Mountain View, California, USA"}
+{"company_name":"Amazon.com Inc.","establish_year":1994,"overall_profit":30000000000,"type":"Enterprise","headquarters":"Seattle, Washington, USA"}
+{"company_name":"Tesla Inc.","establish_year":2003,"overall_profit":5000000000,"type":"Product","headquarters":"Palo Alto, California, USA"}
+{"company_name":"Meta Platforms Inc.","establish_year":2004,"overall_profit":29000000000,"type":"Entertainment","headquarters":"Menlo Park, California, USA"}
+{"company_name":"Netflix Inc.","establish_year":1997,"overall_profit":6000000000,"type":"Entertainment","headquarters":"Los Gatos, California, USA"}
+{"company_name":"DJI (Dow Jones Industrial Average)","establish_year":1896,"overall_profit":null,"type":null,"headquarters":null}
+{"company_name":"GSPC (S&P500)","establish_year":1957,"overall_profit":null,"type":null,"headquarters":null}
+{"company_name":"IXIC (NASDAQ Composite)","establish_year":1971,"overall_profit":null,"type":null,"headquarters":null}
+

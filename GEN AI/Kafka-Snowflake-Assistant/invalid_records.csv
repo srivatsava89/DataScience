@@ -1,0 +1,4 @@
+stock_symbol,company_name,date,opening_price,closing_price,high_price,low_price,volume,market_cap,dividend_yield,errors
+DJI,^DJI (Dow Jones Industrial Average),2024-01-01,35000,35250,35350,34950,N/A,N/A,N/A,"volume must be an integer, opening_price must be a float or int, market_cap must be a float or int"
+GSPC,^GSPC (S&P500),2024-01-01,4500,4525,4535,4485,N/A,N/A,N/A,"volume must be an integer, opening_price must be a float or int, market_cap must be a float or int"
+IXIC,^IXIC (NASDAQ Composite),2024-01-01,15000,15125,15175,14975,N/A,N/A,N/A,"volume must be an integer, opening_price must be a float or int, market_cap must be a float or int"
