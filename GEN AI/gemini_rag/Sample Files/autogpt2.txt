@@ -1,0 +1,18 @@
+A text file (sometimes spelled textfile; an old alternative name is flat file) is a kind of computer file that is structured as a sequence of lines of electronic text. A text file exists stored as data within a computer file system.
+
+In operating systems such as CP/M, where the operating system does not keep track of the file size in bytes, the end of a text file is denoted by placing one or more special characters, known as an end-of-file (EOF) marker, as padding after the last line in a text file. In modern operating systems such as DOS, Microsoft Windows and Unix-like systems, text files do not contain any special EOF character, because file systems on those operating systems keep track of the file size in bytes.
+
+Some operating systems, such as Multics, Unix-like systems, CP/M, DOS, the classic Mac OS, and Windows, store text files as a sequence of bytes, with an end-of-line delimiter at the end of each line. Other operating systems, such as OpenVMS and OS/360 and its successors, have record-oriented filesystems, in which text files are stored as a sequence either of fixed-length records or of variable-length records with a record-length value in the record header.
+
+"Text file" refers to a type of container, while plain text refers to a type of content.
+
+At a generic level of description, there are two kinds of computer files: text files and binary files.[1]
+
+Data storage
+
+This section does not cite any sources. Please help improve this section by adding citations to reliable sources. Unsourced material may be challenged and removed. (September 2024) (Learn how and when to remove this message)
+
+A stylized iconic depiction of a CSV-formatted text file
+Because of their simplicity, text files are commonly used for storage of information. They avoid some of the problems encountered with other file formats, such as endianness, padding bytes, or differences in the number of bytes in a machine word. Further, when data corruption occurs in a text file, it is often easier to recover and continue processing the remaining contents. A disadvantage of text files is that they usually have a low entropy, meaning that the information occupies more storage than is strictly necessary.
+
+A simple text file may need no additional metadata (other than knowledge of its character set) to assist the reader in interpretation. A text file may contain no data at all, which is a case of zero-byte file.

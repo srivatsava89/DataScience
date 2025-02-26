@@ -1,0 +1,30 @@
+1. it uses the old highlighted file instead of the original pdf file 
+    which result in highliging the old prompt content and new prompt content which is not related to current prompt 
+
+2. GenixChat doesn't know about the file overall which means LLM have no idea about the file content or file
+    its giving the result using that context only which is insufficent 
+    it should be like interacting with LLMs about the file not emmbadings 
+    emmbadings are deciding what to answer instead of LLM 
+
+    solution - try to adjest the temperacture --- it worked not all the time in abstract not worked
+    but its giving the normal simple english text it has to behave like human and 
+    explaing the result which got from the document
+
+3. Big loop hole it was not even considering the pdf file content in the prompt the llm was giving the result based on its own!
+
+
+Error during chain execution: 1 validation error for StuffDocumentsChain
+  Value error, document_variable_name context was not found in llm_chain input_variables: ["'page'"] [type=value_error, input_value={'llm_chain': LLMChain(ve...None, 'callbacks': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/value_error
+
+LangChainDeprecationWarning: This class is deprecated. See the following migration guides for replacements based on `chain_type`:
+stuff: https://python.langchain.com/docs/versions/migrating_chains/stuff_docs_chain
+map_reduce: https://python.langchain.com/docs/versions/migrating_chains/map_reduce_chain
+refine: https://python.langchain.com/docs/versions/migrating_chains/refine_chain
+map_rerank: https://python.langchain.com/docs/versions/migrating_chains/map_rerank_docs_chain
+
+See also guides on retrieval and question-answering here: https://python.langchain.com/docs/how_to/#qa-with-rag
+  return load_qa_chain(model, chain_type="stuff", prompt=prompt)
+
+need to check either context and user question is included or not in that 
+its incldue that why its giving answer related to question ryt if question is inluded context of also inluded

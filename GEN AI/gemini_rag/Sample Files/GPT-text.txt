@@ -1,0 +1,528 @@
+Main menu 
+
+
+Search
+Donate
+Create account
+Log in
+Personal tools 
+ 
+ 
+Contents
+ hide
+(Top)
+History
+Toggle History subsectionInitial developments
+
+Later developments
+
+Foundational models
+
+Task-specific models
+Toggle Task-specific models subsectionMultimodality
+
+Domain-specificity
+
+Brand issues
+
+Selected bibliography
+
+See also
+
+References
+
+Generative pre-trained transformer
+26 languages
+Article
+Talk
+Read
+Edit
+View history
+Tools 
+Appearance
+ hide
+Text
+Small
+Standard
+Large
+Width
+Standard
+Wide
+Color (beta)
+Automatic
+Light
+Dark
+ 
+From Wikipedia, the free encyclopedia
+ 
+Part of a series on
+Machine learning
+and data mining
+showParadigms
+showProblems
+showSupervised learning
+(classification • regression)
+showClustering
+showDimensionality reduction
+showStructured prediction
+showAnomaly detection
+hideArtificial neural network
+Autoencoder
+Deep learning
+Feedforward neural network
+Recurrent neural network LSTM
+GRU
+ESN
+reservoir computing
+Boltzmann machine Restricted
+GAN
+Diffusion model
+SOM
+Convolutional neural network U-Net
+LeNet
+AlexNet
+DeepDream
+Neural radiance field
+Transformer Vision
+Mamba
+Spiking neural network
+Memtransistor
+Electrochemical RAM (ECRAM)
+showReinforcement learning
+showLearning with humans
+showModel diagnostics
+showMathematical foundations
+showJournals and conferences
+showRelated articles
+v
+t
+e
+Original GPT model
+A generative pre-trained transformer (GPT) is a type of large language model (LLM)[1][2][3] and a prominent framework for generative artificial intelligence.[4][5] It is an artificial neural network that is used in natural language processing by machines.[6] It is based on the transformer deep learning architecture, pre-trained on large data sets of unlabeled text, and able to generate novel human-like content.[2][3] As of 2023, most LLMs had these characteristics[7] and are sometimes referred to broadly as GPTs.[8]
+
+The first GPT was introduced in 2018 by OpenAI.[9] OpenAI has released significant GPT foundation models that have been sequentially numbered, to comprise its "GPT-n" series.[10] Each of these was significantly more capable than the previous, due to increased size (number of trainable parameters) and training. The most recent of these, GPT-4o, was released in May 2024.[11] Such models have been the basis for their more task-specific GPT systems, including models fine-tuned for instruction following—which in turn power the ChatGPT chatbot service.[1]
+
+The term "GPT" is also used in the names and descriptions of such models developed by others. For example, other GPT foundation models include a series of models created by EleutherAI,[12] and seven models created by Cerebras in 2023.[13] Companies in different industries have developed task-specific GPTs in their respective fields, such as Salesforce's "EinsteinGPT" (for CRM)[14] and Bloomberg's "BloombergGPT" (for finance).[15]
+
+History
+[edit]
+Initial developments
+[edit]
+Generative pretraining (GP) was a long-established concept in machine learning applications.[16][17] It was originally used as a form of semi-supervised learning, as the model is trained first on an unlabelled dataset (pretraining step) by learning to generate datapoints in the dataset, and then it is trained to classify a labelled dataset.[18]
+
+There were mainly 3 types of early GP. The hidden Markov models learn a generative model of sequences for downstream applications. For example, in speech recognition, a trained HMM infers the most likely hidden sequence for a speech signal, and the hidden sequence is taken as the phonemes of the speech signal. These were developed in the 1970s and became widely applied in speech recognition in the 1980s.[19][20]
+
+The compressors learn to compress data such as images and textual sequences, and the compressed data serves as a good representation for downstream applications such as facial recognition.[21][22][23] The autoencoders similarly learn a latent representation of data for later downstream applications such as speech recognition.[24][25] The connection between autoencoders and algorithmic compressors was noted in 1993.[26]
+
+See also: Transformer (deep learning architecture) § History
+During the 2010s, the problem of machine translation was solved by recurrent neural networks, with attention mechanism added. This was optimized into the transformer architecture, published by Google researchers in Attention Is All You Need (2017).[27] That development led to the emergence of large language models such as BERT (2018)[28] which was a pre-trained transformer (PT) but not designed to be generative (BERT was an "encoder-only" model). Also in 2018, OpenAI published Improving Language Understanding by Generative Pre-Training, which introduced GPT-1, the first in its GPT series.[29]
+
+Previously in 2017, some of the authors who would later work on GPT-1 worked on generative pre-training of language with LSTM, which resulted in a model that could represent text with vectors that could easily be fine-tuned for downstream applications.[30]
+
+Prior to transformer-based architectures, the best-performing neural NLP (natural language processing) models commonly employed supervised learning from large amounts of manually-labeled data. The reliance on supervised learning limited their use on datasets that were not well-annotated, and also made it prohibitively expensive and time-consuming to train extremely large language models.[29]
+
+The semi-supervised approach OpenAI employed to make a large-scale generative system—and was first to do with a transformer model—involved two stages: an unsupervised generative "pretraining" stage to set initial parameters using a language modeling objective, and a supervised discriminative "fine-tuning" stage to adapt these parameters to a target task.[29]
+
+Later developments
+[edit]
+Regarding more recent GPT foundation models, OpenAI published its first versions of GPT-3 in July 2020. There were three models, with 1B, 6.7B, 175B parameters, respectively named babbage, curie, and davinci (giving initials B, C, and D).[citation needed]
+
+In July 2021, OpenAI published Codex, a task-specific GPT model targeted for programming applications. This was developed by fine-tuning a 12B parameter version of GPT-3 (different from previous GPT-3 models) using code from GitHub.[31]
+
+In March 2022, OpenAI published two versions of GPT-3 that were fine-tuned for instruction-following (instruction-tuned), named davinci-instruct-beta (175B) and text-davinci-001,[32] and then started beta testing code-davinci-002.[33] text-davinci-002 was instruction-tuned from code-davinci-002. Both text-davinci-003 and ChatGPT were released in November 2022, with both building upon text-davinci-002 via reinforcement learning from human feedback (RLHF). text-davinci-003 is trained for following instructions (like its predecessors), whereas ChatGPT is further trained for conversational interaction with a human user.[34][35]
+
+OpenAI's most recent GPT foundation model, GPT-4, was released on March 14, 2023. It can be accessed directly by users via a premium version of ChatGPT, and is available to developers for incorporation into other products and services via OpenAI's API. Other producers of GPT foundation models include EleutherAI (with a series of models starting in March 2021)[12] and Cerebras (with seven models released in March 2023).[13]
+
+Foundational models
+[edit]
+A foundational model is an AI model trained on broad data at scale such that it can be adapted to a wide range of downstream tasks.[36][37]
+
+Thus far, the most notable GPT foundation models have been from OpenAI's GPT-n series. The most recent from that is GPT-4, for which OpenAI declined to publish the size or training details (citing "the competitive landscape and the safety implications of large-scale models").[38]
+
+OpenAI's GPT-n series
+Model
+Architecture
+Parameter count
+Training data
+Release date
+Training cost
+GPT-1
+12-level, 12-headed Transformer decoder (no encoder), followed by linear-softmax.
+117 million
+BookCorpus:[39] 4.5 GB of text, from 7000 unpublished books of various genres.
+June 11, 2018[9]
+30 days on 8 P600 GPUs, or 1 petaFLOP/s-day.[9]
+GPT-2
+GPT-1, but with modified normalization
+1.5 billion
+WebText: 40 GB of text, 8 million documents, from 45 million webpages upvoted on Reddit.
+February 14, 2019 (initial/limited version) and November 5, 2019 (full version)[40]
+"tens of petaflop/s-day",[41] or 1.5e21 FLOP.[42]
+GPT-3
+GPT-2, but with modification to allow larger scaling
+175 billion[43]
+499 billion tokens consisting of CommonCrawl (570 GB), WebText, English Wikipedia, and two books corpora (Books1 and Books2).
+May 28, 2020[41]
+3640 petaflop/s-day (Table D.1[41]), or 3.1e23 FLOP.[42]
+GPT-3.5
+Undisclosed
+175 billion[43]
+Undisclosed
+March 15, 2022
+Undisclosed
+GPT-4
+Also trained with both text prediction and RLHF; accepts both text and images as input. Further details are not public.[38]
+Undisclosed. Estimated 1.7 trillion.[44]
+Undisclosed
+March 14, 2023
+Undisclosed. Estimated 2.1 × 1025 FLOP.[42]
+Other such models include Google's PaLM, a broad foundation model that has been compared to GPT-3 and has recently been made available to developers via an API,[45][46] and Together's GPT-JT, which has been reported as the closest-performing open-source alternative to GPT-3 (and is derived from earlier open-source GPTs).[47] Meta AI (formerly Facebook) also has a generative transformer-based foundational large language model, known as LLaMA.[48]
+
+Foundational GPTs can also employ modalities other than text, for input and/or output. GPT-4 is a multi-modal LLM that is capable of processing text and image input (though its output is limited to text).[49] Regarding multimodal output, some generative transformer-based models are used for text-to-image technologies such as diffusion[50] and parallel decoding.[51] Such kinds of models can serve as visual foundation models (VFMs) for developing downstream systems that can work with images.[52]
+
+Task-specific models
+[edit]
+A foundational GPT model can be further adapted to produce more targeted systems directed to specific tasks and/or subject-matter domains. Methods for such adaptation can include additional fine-tuning (beyond that done for the foundation model) as well as certain forms of prompt engineering.[53]
+
+An important example of this is fine-tuning models to follow instructions, which is of course a fairly broad task but more targeted than a foundation model. In January 2022, OpenAI introduced "InstructGPT"—a series of models which were fine-tuned to follow instructions using a combination of supervised training and reinforcement learning from human feedback (RLHF) on base GPT-3 language models.[54][55] Advantages this had over the bare foundational models included higher accuracy, less negative/toxic sentiment, and generally better alignment with user needs. Hence, OpenAI began using this as the basis for its API service offerings.[56] Other instruction-tuned models have been released by others, including a fully open version.[57][58]
+
+Another (related) kind of task-specific models are chatbots, which engage in human-like conversation. In November 2022, OpenAI launched ChatGPT—an online chat interface powered by an instruction-tuned language model trained in a similar fashion to InstructGPT.[59] They trained this model using RLHF, with human AI trainers providing conversations in which they played both the user and the AI, and mixed this new dialogue dataset with the InstructGPT dataset for a conversational format suitable for a chatbot. Other major chatbots currently include Microsoft's Bing Chat, which uses OpenAI's GPT-4 (as part of a broader close collaboration between OpenAI and Microsoft),[60] and Google's competing chatbot Bard (initially based on their LaMDA family of conversation-trained language models, with plans to switch to PaLM).[61]
+
+Yet another kind of task that a GPT can be used for is the meta-task of generating its own instructions, like developing a series of prompts for 'itself' to be able to effectuate a more general goal given by a human user.[62] This is known as an AI agent, and more specifically a recursive one because it uses results from its previous self-instructions to help it form its subsequent prompts; the first major example of this was Auto-GPT (which uses OpenAI's GPT models), and others have since been developed as well.[63]
+
+Multimodality
+[edit]
+
+This section needs to be updated. The reason given is: Recent advancements in the field have emerged and warrant thorough documentation. Please help update this article to reflect recent events or newly available information. (December 2023)
+Generative transformer-based systems can also be targeted for tasks involving modalities beyond text. For example, Microsoft's "Visual ChatGPT" combines ChatGPT with visual foundation models (VFMs) to enable input or output comprising images as well as text.[64] Also, advances in text-to-speech technology offer tools for audio content creation when used in conjunction with foundational GPT language models.[65]
+
+Domain-specificity
+[edit]
+
+This list contains entries that appear to advertise a subject. Please help improve it by re-writing promotional content from a neutral point of view, and removing inappropriate entries that are not notable or do not fit this list's inclusion criteria. (May 2023)
+GPT systems can be directed toward particular fields or domains. Some reported examples of such models and apps are as follows:
+
+EinsteinGPT – for sales and marketing domains, to aid with customer relationship management (uses GPT-3.5)[66][67]
+BloombergGPT – for the financial domain, to aid with financial news and information (uses "freely available" AI methods, combined with their proprietary data)[68]
+Khanmigo – described as a GPT version for tutoring, in the education domain, it aids students using Khan Academy by guiding them through their studies without directly providing answers (powered by GPT-4)[69][70]
+SlackGPT – for the Slack instant-messaging service, to aid with navigating and summarizing discussions on it (uses OpenAI's API)[71]
+BioGPT – for the biomedical domain, to aid with biomedical literature text generation and mining (uses GPT-2)[72]
+Sometimes domain-specificity is accomplished via software plug-ins or add-ons. For example, several different companies have developed particular plugins that interact directly with OpenAI's ChatGPT interface,[73][74] and Google Workspace has available add-ons such as "GPT for Sheets and Docs"—which is reported to aid use of spreadsheet functionality in Google Sheets.[75][76]
+
+In November 2023, OpenAI announced that it's enabling ChatGPT Plus subscribers to create custom versions of ChatGPT (being called GPTs).[77] These can be tailored for specific domains via prompt engineering, curated datasets, and/or targeted interaction with external tools. Users who register as verified builders are able to publish their custom GPTs for other users, with monetization potential. (This is notably distinct from OpenAI's API service, as this is based internally within OpenAI's platform.)
+
+Brand issues
+[edit]
+OpenAI, which created the first generative pre-trained transformer (GPT) in 2018, has recently asserted that "GPT" should be regarded as a brand of OpenAI.[78] In April 2023, OpenAI revised the brand guidelines in its terms of service to indicate that other businesses using its API to run their artificial intelligence (AI) services would no longer be able to include "GPT" in such names or branding.[79] In May 2023, OpenAI engaged a brand management service to notify its API customers of this policy, although these notifications stopped short of making overt legal claims (such as allegations of trademark infringement or demands to cease and desist).[78] As of November 2023, OpenAI still prohibits its API licensees from naming their own products with "GPT",[80] but it has begun enabling its ChatGPT Plus subscribers to make "custom versions of ChatGPT" that are being called GPTs on the OpenAI site.[81] OpenAI's terms of service says that its subscribers may use "GPT" in the names of these, although it's "discouraged".[80]
+
+Relatedly, OpenAI has applied to the United States Patent and Trademark Office (USPTO) to seek domestic trademark registration for the term "GPT" in the field of AI.[78] OpenAI sought to expedite handling of its application, but the USPTO declined that request in April 2023.[82] In May 2023, the USPTO responded to the application with a determination that "GPT" was both descriptive and generic.[83] As of November 2023, OpenAI continues to pursue its argument through the available processes. Regardless, failure to obtain a registered U.S. trademark does not preclude some level of common-law trademark rights in the U.S.,[84] and/or trademark rights in other countries.[85]
+
+For any given type or scope of trademark protection in the U.S., OpenAI would need to establish that the term is actually "distinctive" to their specific offerings in addition to being a broader technical term for the kind of technology. Some media reports suggested that OpenAI may be able to obtain trademark registration based indirectly on the fame of its GPT-based chatbot product, ChatGPT,[82][86] for which OpenAI has separately sought protection (and which it has sought to enforce more strongly).[87] Other reports have indicated that registration for the bare term "GPT" seems unlikely to be granted,[78][88] as it is used frequently as a common term to refer simply to AI systems that involve generative pre-trained transformers.[3][89][90][91] In any event, to whatever extent exclusive rights in the term may occur the U.S., others would need to avoid using it for similar products or services in ways likely to cause confusion.[88][92] If such rights ever became broad enough to implicate other well-established uses in the field, the trademark doctrine of descriptive fair use could still continue non-brand-related usage.[93]
+
+Selected bibliography
+[edit]
+This section lists the main official publications from OpenAI and Microsoft on their GPT models.
+
+GPT-1: report,[9] GitHub release.[94]
+GPT-2: blog announcement,[95] report on its decision of "staged release",[96] GitHub release.[97]
+GPT-3: report.[41] No GitHub or any other form of code release thenceforth.
+WebGPT: blog announcement,[98] report,[99]
+InstructGPT: blog announcement,[54] report.[55]
+ChatGPT: blog announcement (no report).[59]
+GPT-4: blog announcement,[100] reports,[101][102] model card.[103]
+GPT-4o: blog announcement.[104]
+See also
+[edit]
+Cyc
+Gemini
+References
+[edit]
+^ Jump up to:a b Haddad, Mohammed. "How does GPT-4 work and how can you start using it in ChatGPT?". www.aljazeera.com.
+^ Jump up to:a b "Generative AI: a game-changer society needs to be ready for". World Economic Forum. 9 January 2023.
+^ Jump up to:a b c "The A to Z of Artificial Intelligence". Time. April 13, 2023.
+^ Hu, Luhui (November 15, 2022). "Generative AI and Future". Medium.
+^ "CSDL | IEEE Computer Society". www.computer.org.
+^ "LibGuides: Using AI Language Models : ChatGPT".
+^ Toews, Rob. "The Next Generation Of Large Language Models". Forbes.
+^ Mckendrick, Joe (March 13, 2023). "Most Jobs Soon To Be 'Influenced' By Artificial Intelligence, Research Out Of OpenAI And University Of Pennsylvania Suggests". Forbes.
+^ Jump up to:a b c d "Improving language understanding with unsupervised learning". openai.com. June 11, 2018. Archived from the original on 2023-03-18. Retrieved 2023-03-18.
+^ "GPT-1 to GPT-4: Each of OpenAI's GPT Models Explained and Compared". MUO. April 11, 2023.
+^ "GPT-4". openai.com. Retrieved 2023-12-08.
+^ Jump up to:a b Alford, Anthony (July 13, 2021). "EleutherAI Open-Sources Six Billion Parameter GPT-3 Clone GPT-J". InfoQ.
+^ Jump up to:a b "News" (Press release).
+^ Morrison, Ryan (7 March 2023). "Salesforce launches EinsteinGPT built with OpenAI technology". Tech Monitor.
+^ "The ChatGPT of Finance is Here, Bloomberg is Combining AI and Fintech". Forbes.
+^ Hinton (et-al), Geoffrey (October 15, 2012). "Deep neural networks for acoustic modeling in speech recognition" (PDF). IEEE Signal Processing Magazine. Digital Object Identifier 10.1109/MSP.2012.2205597. doi:10.1109/MSP.2012.2205597. S2CID 206485943.
+^ Deng, Li (2014-01-22). "A tutorial survey of architectures, algorithms, and applications for deep learning | APSIPA Transactions on Signal and Information Processing | Cambridge Core". Apsipa Transactions on Signal and Information Processing. 3. Cambridge.org: e2. doi:10.1017/atsip.2013.9. S2CID 9928823.
+^ Erhan, Dumitru; Courville, Aaron; Bengio, Yoshua; Vincent, Pascal (2010-03-31). "Why Does Unsupervised Pre-training Help Deep Learning?". Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics. JMLR Workshop and Conference Proceedings: 201–208.
+^ "First-Hand:The Hidden Markov Model – Engineering and Technology History Wiki". ethw.org. 12 January 2015. Archived from the original on 3 April 2018. Retrieved 1 May 2018.
+^ Juang, B. H.; Rabiner, L. R. (1991). "Hidden Markov Models for Speech Recognition". Technometrics. 33 (3): 251–272. doi:10.2307/1268779. ISSN 0040-1706. JSTOR 1268779.
+^ Cottrell, Garrison W.; Munro, Paul; Zipser, David (1987). "Learning Internal Representation From Gray-Scale Images: An Example of Extensional Programming". Proceedings of the Annual Meeting of the Cognitive Science Society. 9.
+^ Cottrell, Garrison W. (1991-01-01), Touretzky, David S.; Elman, Jeffrey L.; Sejnowski, Terrence J.; Hinton, Geoffrey E. (eds.), "Extracting features from faces using compression networks: Face, identity, emotion, and gender recognition using holons", Connectionist Models, Morgan Kaufmann, pp. 328–337, ISBN 978-1-4832-1448-1, retrieved 2024-10-04
+^ Schmidhuber, Jürgen (1992). "Learning complex, extended sequences using the principle of history compression" (PDF). Neural Computation. 4 (2): 234–242. doi:10.1162/neco.1992.4.2.234. S2CID 18271205.
+^ Elman, Jeffrey L.; Zipser, David (1988-04-01). "Learning the hidden structure of speech". The Journal of the Acoustical Society of America. 83 (4): 1615–1626. Bibcode:1988ASAJ...83.1615E. doi:10.1121/1.395916. ISSN 0001-4966. PMID 3372872.
+^ Bourlard, H.; Kamp, Y. (1988). "Auto-association by multilayer perceptrons and singular value decomposition". Biological Cybernetics. 59 (4–5): 291–294. doi:10.1007/BF00332918. PMID 3196773. S2CID 206775335.
+^ Hinton, Geoffrey E; Zemel, Richard (1993). "Autoencoders, Minimum Description Length and Helmholtz Free Energy". Advances in Neural Information Processing Systems. 6. Morgan-Kaufmann.
+^ Vaswani, Ashish; Shazeer, Noam; Parmar, Niki; Uszkoreit, Jakob; Jones, Llion; Gomez, Aidan N; Kaiser, Łukasz; Polosukhin, Illia (2017). "Attention is All you Need" (PDF). Advances in Neural Information Processing Systems. 30. Curran Associates, Inc.
+^ Devlin, Jacob; Chang, Ming-Wei; Lee, Kenton; Toutanova, Kristina (May 24, 2019). "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding". Association for Computational Linguistics. arXiv:1810.04805.
+^ Jump up to:a b c Radford, Alec; Narasimhan, Karthik; Salimans, Tim; Sutskever, Ilya (11 June 2018). "Improving Language Understanding by Generative Pre-Training" (PDF). OpenAI. p. 12. Archived (PDF) from the original on 26 January 2021. Retrieved 23 January 2021.
+^ Radford, Alec; Jozefowicz, Rafal; Sutskever, Ilya (2017-04-06). "Learning to Generate Reviews and Discovering Sentiment". arXiv:1704.01444 [cs.LG].
+^ Chen, Mark; Tworek, Jerry; Jun, Heewoo; Yuan, Qiming; Ponde de Oliveira Pinto, Henrique; Kaplan, Jared; Edwards, Harri; Burda, Yuri; Joseph, Nicholas; Brockman, Greg; Ray, Alex; Puri, Raul; Krueger, Gretchen; Petrov, Michael; Khlaaf, Heidy (2021-07-01). "Evaluating Large Language Models Trained on Code". Association for Computational Linguistics. arXiv:2107.03374.
+^ Ouyang, Long; Wu, Jeffrey; Jiang, Xu; Almeida, Diogo; Wainwright, Carroll; Mishkin, Pamela; Zhang, Chong; Agarwal, Sandhini; Slama, Katarina; Ray, Alex; Schulman, John; Hilton, Jacob; Kelton, Fraser; Miller, Luke; Simens, Maddie (2022-12-06). "Training language models to follow instructions with human feedback". Advances in Neural Information Processing Systems. 35: 27730–27744. arXiv:2203.02155.
+^ "New GPT-3 capabilities: Edit & insert". openai.com. Retrieved 2023-06-24.
+^ Fu, Yao; Peng, Hao; Khot, Tushar (2022). "How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources". Yao Fu's Notion.
+^ "Model index for researchers". OpenAI API. Archived from the original on 23 June 2023. Retrieved 2023-06-23.
+^ "Introducing the Center for Research on Foundation Models (CRFM)". Stanford HAI. 18 August 2021.
+^ "Reflections on Foundation Models". hai.stanford.edu. 2021-10-18. Retrieved 2024-08-15.
+^ Jump up to:a b OpenAI (2023). "GPT-4 Technical Report" (PDF). Archived (PDF) from the original on 2023-03-14. Retrieved 2023-03-16.
+^ Zhu, Yukun; Kiros, Ryan; Zemel, Rich; Salakhutdinov, Ruslan; Urtasun, Raquel; Torralba, Antonio; Fidler, Sanja (2015). Aligning Books and Movies: Towards Story-Like Visual Explanations by Watching Movies and Reading Books. IEEE International Conference on Computer Vision (ICCV) 2015. pp. 19–27. arXiv:1506.06724. Archived from the original on 2023-02-05. Retrieved 2023-02-07.
+^ Vincent, James (November 7, 2019). "OpenAI has published the text-generating AI it said was too dangerous to share". The Verge.
+^ Jump up to:a b c d Brown, Tom B.; Mann, Benjamin; Ryder, Nick; Subbiah, Melanie; Kaplan, Jared; Dhariwal, Prafulla; Neelakantan, Arvind; Shyam, Pranav; Sastry, Girish; Askell, Amanda; Agarwal, Sandhini; Herbert-Voss, Ariel; Krueger, Gretchen; Henighan, Tom; Child, Rewon; Ramesh, Aditya; Ziegler, Daniel M.; Wu, Jeffrey; Winter, Clemens; Hesse, Christopher; Chen, Mark; Sigler, Eric; Litwin, Mateusz; Gray, Scott; Chess, Benjamin; Clark, Jack; Berner, Christopher; McCandlish, Sam; Radford, Alec; Sutskever, Ilya; Amodei, Dario (May 28, 2020). "Language Models are Few-Shot Learners". NeurIPS. arXiv:2005.14165v4.
+^ Jump up to:a b c "ML input trends visualization". Epoch. Retrieved 2023-05-02.
+^ Jump up to:a b Ver Meer, Dave (June 1, 2023). "ChatGPT Statistics". NamePepper. Retrieved 2023-06-09.
+^ "GPT-4 has more than a trillion parameters – Report". March 25, 2023.
+^ Vincent, James (March 14, 2023). "Google opens up its AI language model PaLM to challenge OpenAI and GPT-3". The Verge.
+^ "Google Opens Access to PaLM Language Model".
+^ Iyer, Aparna (November 30, 2022). "Meet GPT-JT, the Closest Open Source Alternative to GPT-3". Analytics India Magazine.
+^ "Meta Debuts AI Language Model, But It's Only for Researchers". PCMAG.
+^ Islam, Arham (March 27, 2023). "Multimodal Language Models: The Future of Artificial Intelligence (AI)". Archived from the original on May 15, 2023. Retrieved May 15, 2023.
+^ Islam, Arham (November 14, 2022). "How Do DALL·E 2, Stable Diffusion, and Midjourney Work?".
+^ Saha, Shritama (January 4, 2023). "Google Launches Muse, A New Text-to-Image Transformer Model". Analytics India Magazine.
+^ Wu (et-al), Chenfei (March 8, 2023). "Visual ChatGPT". arXiv:2303.04671 [cs.CV].
+^ Bommasani (et-al), Rishi (July 12, 2022). "On the Opportunities and Risks of Foundation Models". arXiv:2108.07258 [cs.LG].
+^ Jump up to:a b "Aligning language models to follow instructions". openai.com. Archived from the original on 23 March 2023. Retrieved 23 March 2023.
+^ Jump up to:a b Ouyang, Long; Wu, Jeff; Jiang, Xu; et al. (4 November 2022). "Training language models to follow instructions with human feedback". NeurIPS. arXiv:2203.02155.
+^ Ramnani, Meeta (January 28, 2022). "OpenAI dumps its own GPT-3 for something called InstructGPT, and for right reason". Analytics India Magazine.
+^ "Stanford CRFM". crfm.stanford.edu.
+^ "Free Dolly: Introducing the World's First Truly Open Instruction-Tuned LLM". Databricks. April 12, 2023.
+^ Jump up to:a b "Introducing ChatGPT". openai.com. Archived from the original on 2023-03-16. Retrieved 2023-03-16.
+^ Wiggers, Kyle (May 4, 2023). "Microsoft doubles down on AI with new Bing features".
+^ "ChatGPT vs. Bing vs. Google Bard: Which AI Is the Most Helpful?". CNET.
+^ "Auto-GPT, BabyAGI, and AgentGPT: How to use AI agents". Mashable. April 19, 2023.
+^ Marr, Bernard. "Auto-GPT May Be The Strong AI Tool That Surpasses ChatGPT". Forbes.
+^ "Microsoft Open-Sources Multimodal Chatbot Visual ChatGPT". InfoQ.
+^ Edwards, Benj (January 9, 2023). "Microsoft's new AI can simulate anyone's voice with 3 seconds of audio". Ars Technica.
+^ Morrison, Ryan (March 7, 2023). "Salesforce launches EinsteinGPT built with OpenAI technology".
+^ Sharma, Animesh K.; Sharma, Rahul (2023). "The role of generative pretrained transformers (GPTs) in revolutionising digital marketing: A conceptual model". Journal of Cultural Marketing Strategy. 8 (1): 80–90. doi:10.69554/TLVQ2275.
+^ Leswing, Kif (April 13, 2023). "Bloomberg plans to integrate GPT-style A.I. into its terminal". CNBC.
+^ "Learning nonprofit Khan Academy is piloting a version of GPT called Khanmigo". Fast Company. May 4, 2023. Retrieved May 22, 2023.
+^ "Khan Academy Pilots GPT-4 Powered Tool Khanmigo for Teachers". THE Journal.
+^ Hachman, Mark (May 4, 2023). "Slack GPT will bring AI chatbots to your conversations". PCWorld.
+^ Luo (et-al), Renqian (April 3, 2023). "BioGPT: Generative pre-trained transformer for biomedical text generation and mining". Briefings in Bioinformatics. 23 (6). arXiv:2210.10341. doi:10.1093/bib/bbac409. PMID 36156661.
+^ "Know about ChatGPT's 13 best plugins, designed to improve your overall user experience". Latest Digital Transformation Trends | Cloud News | Wire19. May 5, 2023.
+^ "ChatGPT plugins". openai.com.
+^ "How to Use ChatGPT on Google Sheets With GPT for Sheets and Docs". MUO. March 12, 2023.
+^ Asay, Matt (February 27, 2023). "Embrace and extend Excel for AI data prep". InfoWorld.
+^ https://www.techopedia.com/definition/openai-gpts
+^ Jump up to:a b c d Hicks, William (May 10, 2023). "ChatGPT creator OpenAI is asking startups to remove 'GPT' from their names". The Business Journal. Retrieved 2023-05-21.
+^ OpenAI (April 24, 2023). "Brand Guidelines". Retrieved 21 May 2023.
+^ Jump up to:a b "Brand guidelines".
+^ "Introducing GPTS".
+^ Jump up to:a b Heah, Alexa (April 26, 2023). "OpenAI Unsuccessful At Speeding Up Its Attempt To Trademark 'GPT'". DesignTAXI. Retrieved May 21, 2023.
+^ "NONFINAL OFFICE ACTION". USPTO. May 25, 2023.
+^ "U.S. Trademark Law". December 2015.
+^ "International Trademark Rights".
+^ "OpenAI Wants to Trademark 'GPT' Amid Rise of AI Chatbots". Tech Times. 25 April 2023. Retrieved 2023-05-21.
+^ Louise, Nickie (April 3, 2023). "OpenAI files a UDRP case against the current owner of ChatGPT.com". Retrieved 2023-05-21.
+^ Jump up to:a b Demcak, Tramatm-Igor (2023-04-26). "OpenAI's Battle for Brand Protection: Can GPT be trademarked?". Lexology. Archived from the original on May 5, 2023. Retrieved 2023-05-22.
+^ Lawton, George (April 20, 2023). "ChatGPT vs. GPT: How are they different? | TechTarget". Enterprise AI. Archived from the original on May 9, 2023. Retrieved 2023-05-21.
+^ Robb, Drew (2023-04-12). "GPT-4 vs. ChatGPT: AI Chatbot Comparison". eWEEK. Retrieved 2023-05-21.
+^ Russo, Philip (August 22, 2023). "The Genesis of Generative AI for Everything Everywhere All at Once in CRE". Commercial Observer. Archived from the original on August 24, 2023.
+^ "Trademark infringement".
+^ Rheintgen, Husch Blackwell LLP-Kathleen A. (2013-08-16). "Branding 101: trademark descriptive fair use". Lexology. Retrieved 2023-05-21.
+^ finetune-transformer-lm, OpenAI, June 11, 2018, retrieved 2023-05-01
+^ "GPT-2: 1.5B release". openai.com. Retrieved 2023-05-01.
+^ Solaiman, Irene; Brundage, Miles; Clark, Jack; Askell, Amanda; Herbert-Voss, Ariel; Wu, Jeff; Radford, Alec; Krueger, Gretchen; Kim, Jong Wook; Kreps, Sarah; McCain, Miles; Newhouse, Alex; Blazakis, Jason; McGuffie, Kris; Wang, Jasmine (2019-11-12). "Release Strategies and the Social Impacts of Language Models". arXiv:1908.09203 [cs.CL].
+^ gpt-2, OpenAI, 2023-05-01, retrieved 2023-05-01
+^ "WebGPT: Improving the factual accuracy of language models through web browsing". openai.com. Archived from the original on 21 Jun 2023. Retrieved 2023-07-02.
+^ Nakano, Reiichiro; Hilton, Jacob; Balaji, Suchir; Wu, Jeff; Ouyang, Long; Kim, Christina; Hesse, Christopher; Jain, Shantanu; Kosaraju, Vineet; Saunders, William; Jiang, Xu; Cobbe, Karl; Eloundou, Tyna; Krueger, Gretchen; Button, Kevin (2021-12-01). "WebGPT: Browser-assisted question-answering with human feedback". CoRR. arXiv:2112.09332.
+^ "GPT-4". openai.com. Retrieved 2023-05-01.
+^ OpenAI (2023-03-27). "GPT-4 Technical Report". arXiv:2303.08774 [cs.CL].
+^ Bubeck, Sébastien; Chandrasekaran, Varun; Eldan, Ronen; Gehrke, Johannes; Horvitz, Eric; Kamar, Ece; Lee, Peter; Lee, Yin Tat; Li, Yuanzhi; Lundberg, Scott; Nori, Harsha; Palangi, Hamid; Ribeiro, Marco Tulio; Zhang, Yi (2023-04-13). "Sparks of Artificial General Intelligence: Early experiments with GPT-4". arXiv:2303.12712 [cs.CL].
+^ GPT-4 System Card, OpenAI, March 23 2023 (Accessed May 22 2023).
+^ "Hello GPT-4o". OpenAI. May 13, 2024.
+
+
+
+ 
+showv
+t
+e
+OpenAI
+ 
+showv
+t
+e
+Natural language processing
+ 
+hidev
+t
+e
+Artificial intelligence
+Concepts
+Parameter Hyperparameter
+Loss functions
+Regression Bias–variance tradeoff
+Double descent
+Overfitting
+Clustering
+Gradient descent SGD
+Quasi-Newton method
+Conjugate gradient method
+Backpropagation
+Attention
+Convolution
+Normalization Batchnorm
+Activation Softmax
+Sigmoid
+Rectifier
+Gating
+Weight initialization
+Regularization
+Datasets Augmentation
+Reinforcement learning Q-learning
+SARSA
+Imitation
+Diffusion
+Autoregression
+Adversary
+Hallucination
+Applications
+Machine learning In-context learning
+Artificial neural network Deep learning
+Language model Large language model
+NMT
+Artificial general intelligence
+Implementations
+ 
+Audio–visual
+AlexNet
+WaveNet
+Human image synthesis
+HWR
+OCR
+Speech synthesis ElevenLabs
+Speech recognition
+Facial recognition
+AlphaFold
+Text-to-image models Latent diffusion model
+DALL-E
+Flux
+Ideogram
+Midjourney
+Stable Diffusion
+Text-to-video models Sora
+Dream Machine
+VideoPoet
+Whisper
+Text
+Word2vec
+Seq2seq
+GloVe
+BERT
+T5
+Llama
+Chinchilla AI
+PaLM
+GPT 1
+J
+2
+3
+ChatGPT
+4
+4o
+o1
+Claude
+Gemini
+Grok
+LaMDA
+BLOOM
+Project Debater
+IBM Watson
+IBM Watsonx
+Granite
+PanGu-Σ
+Decisional
+AlphaGo
+AlphaZero
+OpenAI Five
+Self-driving car
+MuZero
+Action selection AutoGPT
+Robot control
+ 
+People
+Alan Turing
+Claude Shannon
+Allen Newell
+Herbert A. Simon
+Frank Rosenblatt
+Marvin Minsky
+John McCarthy
+Nathaniel Rochester
+Seymour Papert
+Joseph Weizenbaum
+Bernard Widrow
+Paul Werbos
+Yoshua Bengio
+Alex Graves
+Ian Goodfellow
+Stephen Grossberg
+Demis Hassabis
+Geoffrey Hinton
+Yann LeCun
+Fei-Fei Li
+Andrew Ng
+Jürgen Schmidhuber
+David Silver
+Ilya Sutskever
+Organizations
+Anthropic
+EleutherAI
+Google DeepMind
+Hugging Face
+Kuaishou
+Meta AI
+Mila
+MiniMax
+Mistral AI
+MIT CSAIL
+OpenAI
+Runway
+xAI
+Architectures
+Neural Turing machine
+Differentiable neural computer
+Transformer Vision transformer (ViT)
+Recurrent neural network (RNN)
+Long short-term memory (LSTM)
+Gated recurrent unit (GRU)
+Echo state network
+Multilayer perceptron (MLP)
+Convolutional neural network (CNN)
+Residual neural network (RNN)
+Highway network
+Mamba
+Autoencoder
+Variational autoencoder (VAE)
+Generative adversarial network (GAN)
+Graph neural network (GNN)
+ Portals Technology
+ Categories Artificial neural networks
+Machine learning
+Categories: Large language models
+Generative artificial intelligence
+Artificial neural networks
+Generative pre-trained transformers
+OpenAI
+This page was last edited on 19 November 2024, at 05:01 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Code of Conduct
+Developers
+Statistics
+Cookie statement
+Mobile view
